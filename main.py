@@ -40,6 +40,7 @@ def inject_globals():
         "cnpj": os.getenv("CNPJ", "00.000.000/0000-00"),
         "cidade_estado": os.getenv("CIDADE_ESTADO", "Marabá‑PA"),
         "csrf_token": lambda: "",  # fallback até habilitar CSRF real
+        "show_admin": os.getenv("ADMIN_UI") == "1",
     }
 
 # --- rotas básicas ---

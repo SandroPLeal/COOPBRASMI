@@ -34,7 +34,9 @@
     <div class="brand h4 mb-0">COOPBRAS</div>
     <nav class="d-flex gap-3">
       <a href="{{ url_for('home') }}" class="text-decoration-none" style="color:var(--ouro)">Home</a>
-      <a href="{{ url_for('admin.dashboard') }}" class="text-decoration-none" style="color:var(--ouro)">Dashboard</a>
+      {% if show_admin %}
+  <a href="{{ url_for('admin.dashboard') }}" class="text-decoration-none" style="color:var(--ouro)">Dashboard</a>
+      {% endif %}
     </nav>
   </div>
 </header>
