@@ -1,0 +1,60 @@
+:root{
+  --verde:#1C281D;
+  --ouro:#CEA957;
+  --ouro-escuro:#8F743E;
+  --bronze:#6A5325;
+  --bege:#B8AB97;
+  --marrom:#453617;
+  --bg:#f6f5f2;
+}
+
+body{ background: var(--bg); font-family: 'Inter','Segoe UI',system-ui,sans-serif; }
+
+/* Barra superior “agência” */
+.header-bank {
+  background: var(--verde);
+  color: var(--ouro);
+  border-bottom: 4px solid var(--ouro);
+}
+.header-bank .brand {
+  font-weight: 800; letter-spacing:.5px;
+}
+.header-bank small { color: var(--ouro); opacity:.9; }
+
+/* CTA com dourado */
+.btn-ouro{
+  background: linear-gradient(135deg, var(--ouro), #f1d289);
+  color: var(--marrom); border:none; border-radius:10px; padding:12px 22px;
+}
+.btn-ouro:hover{ filter: brightness(.95); }
+
+/* Cards */
+.card{ border:none; border-radius:14px; box-shadow:0 8px 20px rgba(0,0,0,.07); }
+.card h3{ color: var(--verde); font-weight:700; }
+
+/* Rodapé com friso dourado */
+.footer-coop{
+  background: var(--verde); color:#f7f7f7; position:relative;
+}
+.footer-coop::before{
+  content:""; position:absolute; top:0; left:0; right:0; height:4px;
+  background: linear-gradient(90deg, var(--ouro), #f1d289, var(--ouro));
+}
+.hero {
+  background: url('{{ url_for("static", filename="imagens/fachada.png") }}') no-repeat center center;
+  background-size: cover;
+  padding: 110px 20px;
+  position: relative;
+  text-shadow: 2px 2px 6px rgba(0,0,0,.55);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}

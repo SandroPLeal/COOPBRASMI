@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Coopbras – Bem-vindo{% endblock %}
+
+{% block head_extra %}
+<style>
+  .hero {
+    background: url('{{ url_for("static", filename="imagens/fachada.png") }}') no-repeat center center;
+    background-size: cover;
+    padding: 110px 20px;
+    position: relative;
+    text-shadow: 2px 2px 6px rgba(0,0,0,.55);
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+  }
+  .hero .container {
+    position: relative;
+    z-index: 2;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero text-center text-white">
+  <div class="hero-overlay"></div>
+  <div class="container position-relative">
+    <h1 class="fw-bold">{{ nome_cooperativa }}</h1>
+    <p class="lead mb-4">Força cooperativa no ouro: compra conjunta, certificação, logística e venda transparente.</p>
+    <a href="{{ url_for('auth.cadastro') }}" class="btn-ouro">Quero me associar</a>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-4 h-100">
+          <h3>Associado</h3>
+          <a href="{{ url_for('auth.cadastro') }}" class="btn btn-outline-dark w-100 mb-3" style="border-color:var(--ouro); color:var(--bronze);">Quero me associar</a>
+          <h5 class="mt-2">Já sou associado</h5>
+          <form action="{{ url_for('auth.login') }}" method="POST" class="mt-2">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="email" name="email" class="form-control mb-2" placeholder="E-mail" required>
+            <input type="password" name="senha" class="form-control mb-3" placeholder="Senha" required>
+            <button class="btn btn-dark w-100" style="background:var(--bronze); border:none;">Entrar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card p-4 h-100">
+          <h3>Operações</h3>
+          <ul class="mb-0">
+            <li>Compra de insumos em escala</li>
+            <li>Certificação e conformidade</li>
+            <li>Logística e segurança</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card p-4 h-100">
+          <h3>Em breve</h3>
+          <p>Plataforma de marketplace do ouro, rastreabilidade e benefícios exclusivos ao cooperado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

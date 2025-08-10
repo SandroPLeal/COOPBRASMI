@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Login – Coopbras{% endblock %}
+
+{% block content %}
+<div class="container py-5" style="max-width:720px;">
+  <h2 class="mb-4">Login</h2>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for c,m in messages %}
+        <div class="alert alert-{{ c }} alert-dismissible fade show" role="alert">
+          {{ m }} <button class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <form method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <div class="mb-3">
+      <label class="form-label">E-mail</label>
+      <input type="email" name="email" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Senha</label>
+      <input type="password" name="senha" class="form-control" required>
+    </div>
+    <button class="btn-ouro">Entrar</button>
+    <a class="btn btn-outline-secondary ms-2" href="{{ url_for('auth.cadastro') }}">Criar conta</a>
+  </form>
+</div>
+{% endblock %}

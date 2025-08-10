@@ -1,0 +1,3 @@
+# Painel administrativo - não versionar
+templates/admin/
+.env

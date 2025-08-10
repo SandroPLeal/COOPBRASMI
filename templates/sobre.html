@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+  <div>
+    <h1 class="text-3xl md:text-5xl font-bold leading-tight">
+      Produção de ouro com <span class="text-amber-600">governança cooperativa</span> e transparência em tempo real
+    </h1>
+    <p class="mt-4 text-neutral-600 md:text-lg">
+      Somos uma cooperativa de mineradores que une capital, técnica e trabalho para operar áreas já licenciadas.
+      Sem promessa de rentabilidade fixa. Resultados variam conforme produção e mercado.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3 text-xs">
+      <span class="px-3 py-1 rounded-full bg-amber-100 border border-amber-200">1 pessoa = 1 voto</span>
+      <span class="px-3 py-1 rounded-full bg-amber-100 border border-amber-200">Comissão de Fiscais</span>
+      <span class="px-3 py-1 rounded-full bg-amber-100 border border-amber-200">Depósito bancário do ouro</span>
+    </div>
+    <a href="#pre-cadastro" class="inline-flex mt-8 px-5 py-3 rounded-xl bg-amber-600 text-white">Participar da fundação</a>
+  </div>
+
+  <div class="grid sm:grid-cols-2 gap-4">
+    <div class="p-5 rounded-2xl border bg-white">
+      <h3 class="font-semibold">Painel de Produção</h3>
+      <p class="text-sm text-neutral-600 mt-2">Custo por grama, produtividade e estoque.</p>
+    </div>
+    <div class="p-5 rounded-2xl border bg-white">
+      <h3 class="font-semibold">Câmeras ao Vivo</h3>
+      <p class="text-sm text-neutral-600 mt-2">Transmissões e biblioteca gravada.</p>
+    </div>
+    <div class="p-5 rounded-2xl border bg-white">
+      <h3 class="font-semibold">Auditoria</h3>
+      <p class="text-sm text-neutral-600 mt-2">Licenças, atas e relatórios assinados.</p>
+    </div>
+    <div class="p-5 rounded-2xl border bg-white">
+      <h3 class="font-semibold">Custódia de Ouro</h3>
+      <p class="text-sm text-neutral-600 mt-2">Saldos por cooperado e comprovantes.</p>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona" class="border-t">
+  <div class="max-w-6xl mx-auto px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-semibold">Como funciona</h2>
+    <p class="mt-2 text-neutral-600 max-w-3xl">
+      O cooperado adere ao estatuto, integraliza capital conforme a classe e acompanha a operação pelo app:
+      produção, estoque de ouro, custos e sobras. A distribuição segue regras estatutárias.
+    </p>
+  </div>
+</section>
+
+<section id="transparencia" class="border-t">
+  <div class="max-w-6xl mx-auto px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-semibold">Transparência verificável</h2>
+    <ul class="mt-4 list-disc pl-5 text-neutral-700">
+      <li>Comissão de Fiscais com acesso a livros e extratos; auditoria independente anual.</li>
+      <li>Ouro em instituição financeira autorizada; solicitações de retirada via app.</li>
+      <li>Licenças, estatuto, atas e relatórios disponíveis no portal do cooperado.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="governanca" class="border-t">
+  <div class="max-w-6xl mx-auto px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-semibold">Governança cooperativa</h2>
+    <ul class="mt-4 list-disc pl-5 text-neutral-700">
+      <li>Classes: Produtor, Técnico, De Capital e Fundador.</li>
+      <li>Voto singular: 1 pessoa = 1 voto (Lei 5.764/71).</li>
+      <li>Atas digitais assinadas e publicadas.</li>
+    </ul>
+    <p class="mt-6 text-xs text-neutral-500">
+      * Não há promessa de rentabilidade fixa. Resultados dependem de produção, custos e preços de mercado.
+    </p>
+  </div>
+</section>
+
+<section id="pre-cadastro" class="border-t bg-neutral-100">
+  <div class="max-w-6xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-8 items-center">
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold">Entre na lista de fundadores</h2>
+      <p class="mt-2 text-neutral-600">
+        Receba a minuta do estatuto e o convite para a assembleia de constituição.
+      </p>
+    </div>
+    <form class="bg-white p-6 rounded-2xl border" method="post" action="#" onsubmit="alert('Em breve: integração /api/pre-cadastro'); return false;">
+      <label class="text-sm">Nome completo</label>
+      <input class="w-full mt-1 mb-3 px-3 py-2 rounded-xl border" placeholder="Seu nome" required>
+      <label class="text-sm">E-mail</label>
+      <input type="email" class="w-full mt-1 mb-3 px-3 py-2 rounded-xl border" placeholder="voce@email.com" required>
+      <label class="text-sm">Classe de interesse</label>
+      <select class="w-full mt-1 mb-4 px-3 py-2 rounded-xl border">
+        <option>Produtor</option>
+        <option>Técnico</option>
+        <option selected>De capital</option>
+        <option>Fundador</option>
+      </select>
+      <button class="w-full px-4 py-3 rounded-xl bg-amber-600 text-white">Enviar interesse</button>
+      <p class="text-xs text-neutral-500 mt-2">
+        Ao enviar você concorda com o recebimento de documentos preparatórios à assembleia.
+      </p>
+    </form>
+  </div>
+</section>
+
+{% endblock %}

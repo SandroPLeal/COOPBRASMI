@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Cadastro – Coopbras{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <h2 class="mb-4">Cadastro de {{ fluxo|capitalize }}</h2>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for c,m in messages %}
+        <div class="alert alert-{{ c }} alert-dismissible fade show" role="alert">
+          {{ m }} <button class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <form method="post" class="row g-3">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="fluxo" value="{{ fluxo }}">
+
+    <div class="col-md-6">
+      <label class="form-label">Nome completo</label>
+      <input name="nome" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Telefone</label>
+      <input name="telefone" class="form-control" placeholder="(xx) xxxxx-xxxx">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">E-mail</label>
+      <input type="email" name="email" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Senha</label>
+      <input type="password" name="senha" class="form-control" required>
+    </div>
+
+    <div class="col-12">
+      <button class="btn-ouro">Concluir cadastro</button>
+      <a class="btn btn-outline-secondary ms-2" href="{{ url_for('home') }}">Voltar</a>
+    </div>
+  </form>
+</div>
+{% endblock %}
